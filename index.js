@@ -5,7 +5,6 @@ import {  clientSlug, getPagePaths, getPlaywrightPageAPI, getScreenshotLocalPath
  * A function to screenshot each page with javascript enabled or disabled, desktop or mobile.
  * @param {isJavascriptEnabled : string , isMobile : boolean} param0
  */
-
 async function screenshotPageHandler({isMobile = false, isJavascriptEnabled = false}){
     
     // Get Pages Paths
@@ -58,8 +57,6 @@ async function screenshotPageHandler({isMobile = false, isJavascriptEnabled = fa
 }
 
 (async() => {
-    console.log('START : PROCESS STARTED');
-
     const promises = [
         // We screenshot the page with javascript enabled and desktop viewports
         screenshotPageHandler({
@@ -73,6 +70,5 @@ async function screenshotPageHandler({isMobile = false, isJavascriptEnabled = fa
         }),
     ];
     await Promise.all(promises);
-
-    console.log('END : PROCESS FINISHED');
+    console.log('Process finished...');
 })();
